@@ -1,0 +1,20 @@
+{% extends 'listings/layout.html' %}
+{% block title %}Listing Detail - Estate Wonder{% endblock %}
+
+{% block content %}
+    <section style="background-image: '{{ listing.photo_main }}';">
+        <h2>Listing Detail</h2>
+        <!-- Add listing detail content here -->
+        <p>{{ listing.title }}</p>
+        <p>{{ listing.description }}</p>
+        <p>Price:${{ listing.price }}</p>
+        <p>Squareft: {{ listing.sqft }}</p>
+        <p>Numbber of bedrooms: {{ listing.bedrooms }}</p>
+        <p>Number of bathrooms: {{ listing.bathrooms }}</p>
+        <!-- <img src="data:image/png;base64,{{ listing.photo_1 }}" alt="Listing Image"> -->
+        <img src="{{ listing.photo_1.url }}" alt="Main Photo" style="height: 100px;">
+        <img src="{{ listing.photo_2.url }}" alt="Main Photo" style="height: 100px;">
+        <img src="{{ listing.photo_3.url }}" alt="Main Photo" style="height: 100px;">
+    <img src="{{ listing.photo_main.url }}" alt="Main Photo" style="height: 400px;">
+    </section>
+{% endblock %}

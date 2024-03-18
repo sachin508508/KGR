@@ -1,0 +1,14 @@
+{% extends 'listings/layout.html' %}
+{% block title %}Confirm Deletion - Estate Wonder{% endblock %}
+
+{% block content %}
+    <section>
+        <h2>Confirm Deletion</h2>
+        <p>Are you sure you want to delete the listing "{{ listing.title }}"?</p>
+        <form method="POST" action="{% url 'listings/listing_delete' listing.id %}">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+            <a href="{% url 'listings/listing_detail' listing.id %}">Cancel</a>
+        </form>
+    </section>
+{% endblock %}

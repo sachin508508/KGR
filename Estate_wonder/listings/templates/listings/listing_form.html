@@ -1,0 +1,13 @@
+{% extends 'listings/layout.html' %}
+{% block title %}Add/Edit Listing - Estate Wonder{% endblock %}
+
+{% block content %}
+    <section>
+        <h2>Add/Edit Listing</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+{% endblock %}

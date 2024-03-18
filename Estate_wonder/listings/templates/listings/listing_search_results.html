@@ -1,0 +1,18 @@
+{% extends 'listings/layout.html' %}
+{% block title %}Search Results - Estate Wonder{% endblock %}
+
+{% block content %}
+    <section>
+        <h2>Search Results</h2>
+        {% if listings %}
+            <ul>
+                {% for listing in listings %}
+                    <li>{{ listing.title }} - ${{ listing.price }}</li>
+                    <!-- Add more listing details if needed -->
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No listings found for "{{ query }}".</p>
+        {% endif %}
+    </section>
+{% endblock %}
